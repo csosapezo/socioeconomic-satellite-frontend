@@ -1,0 +1,10 @@
+.content{
+    position: fixed;
+    float:right;
+    top: 0;
+    bottom: 5vh;
+    left: 550px;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
