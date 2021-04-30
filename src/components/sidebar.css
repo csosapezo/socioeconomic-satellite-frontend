@@ -10,7 +10,8 @@
 img{
     position: fixed;
     display: block;
-    width: auto;
+    width: 20vw;
+    height: 11vh;
     left: 4%;
     top: 3vh;
 }
