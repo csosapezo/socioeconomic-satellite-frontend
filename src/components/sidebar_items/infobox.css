@@ -1,0 +1,42 @@
+.info-title{
+    font-size: 1.3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    position: fixed;
+    background-color: #2f2fa2;
+    color: #f64c72ff;
+    top: 15.5%;
+    left: 3%;
+    z-index:1;
+}
+
+.infobox{
+    display: block;
+    border-radius: 30px;
+    border: 3px solid #f64c72ff;
+    top: 17%;
+    left: 1.5%;
+    width: 26%;
+    height: 30%;
+    position: fixed;
+    float: left;
+}
+
+ul{
+    font-size: 1.5vw;
+    position:relative;
+    color: #FFFFFF  ;
+    top:1.5vh;
+}
+
+li::marker {
+    color: #f64c72ff;
+}
+
+li:first-child::marker {
+    font-size: 1.3vw;
+}
+
+li {
+    margin: 0 0 0.5vw 0;
+}
