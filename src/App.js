@@ -15,7 +15,7 @@ class App extends React.Component {
           "east": 0
       };
 
-      this.state = {sidebar_coords:  initialState};
+      this.state = {sidebar_coords:  initialState, clean: false};
   }
 
   squareCoords = (coords) => {
@@ -28,7 +28,7 @@ class App extends React.Component {
           "east": coords._northEast.lng
       };
 
-      this.setState(() => {return ({sidebar_coords: newState})});
+      this.setState(() => {return ({sidebar_coords: newState, clean: false})});
       console.log(this.state.sidebar_coords)
 
       document.getElementById("top").className = "xy-button-active"
@@ -46,7 +46,7 @@ class App extends React.Component {
           "west": 0,
           "east": 0
       };
-      this.setState({sidebar_coords: cleanState})
+      this.setState(() => {return ({sidebar_coords: cleanState, clean: true})});
 
       document.getElementById("top").className = "xy-button"
       document.getElementById("right").className = "xy-button"
@@ -65,7 +65,7 @@ class App extends React.Component {
     return (
         <div>
             <Sidebar coords={this.state.sidebar_coords} cleanAll={this.cleanAll} selectImage={this.selectImage}/>
-            <Map squareCoords={this.squareCoords}/>
+            <Map squareCoords={this.squareCoords} cleanRectangle={this.state.clean}/>
             <h6 className="footer"> </h6>
         </div>
     )

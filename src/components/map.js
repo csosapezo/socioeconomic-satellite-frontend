@@ -16,7 +16,7 @@ function Map(props) {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <ImageLayers/>
-                <GetSquare handleFunc={props.squareCoords}/>
+                <GetSquare handleFunc={props.squareCoords} clean={props.cleanRectangle}/>
             </MapContainer>
         </div>
     )

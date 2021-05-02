@@ -1,5 +1,6 @@
 import {useMapEvents} from "react-leaflet";
 import L from 'leaflet'
+import {useEffect} from "react";
 
 function getBounds(center) {
     return L.latLng(center).toBounds(10000)
@@ -22,6 +23,18 @@ function GetSquare(props){
             props.handleFunc(bounds);
         },
     })
+
+    useEffect(() => {
+        console.log(props.clean)
+        if (props.clean) {
+            map.eachLayer(function (layer) {
+                if (layer._url !== "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png") {
+                    map.removeLayer(layer);
+                }
+            });
+        }
+    })
+
     return null;
 }
 
