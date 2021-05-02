@@ -7,7 +7,7 @@ import GetSquare from "./map_functions/square";
 
 const position = [-12.0453,  -77.0311]
 
-function Map() {
+function Map(props) {
     return (
         <div class="content">
             <MapContainer center={position} zoom={11} scrollWheelZoom={false} style={{height: "100vh", width: "150vh"}}>
@@ -16,7 +16,7 @@ function Map() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <ImageLayers/>
-                <GetSquare/>
+                <GetSquare handleFunc={props.squareCoords}/>
             </MapContainer>
         </div>
     )

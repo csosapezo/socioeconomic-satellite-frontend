@@ -2,6 +2,7 @@ import React from 'react'
 import './sidebar.css'
 import Infobox from "./sidebar_items/infobox";
 import logo from "../images/header.png";
+import AOI from "./sidebar_items/aoi";
 
 class Sidebar extends React.Component {
     render() {
@@ -9,6 +10,8 @@ class Sidebar extends React.Component {
             <div class="sidebar">
                 <img src={logo} alt="Visualización de imágenes" />
                 <Infobox/>
+                <AOI bounds={this.props.coords} cleanAll={this.props.cleanAll}
+                     selectImage={this.props.selectImage}/>
             </div>
         )
     }
