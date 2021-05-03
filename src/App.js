@@ -15,7 +15,7 @@ class App extends React.Component {
           "east": 0
       };
 
-      this.state = {sidebar_coords:  initialState, clean: false};
+      this.state = {sidebar_coords:  initialState, clean: true};
   }
 
   squareCoords = (coords) => {
