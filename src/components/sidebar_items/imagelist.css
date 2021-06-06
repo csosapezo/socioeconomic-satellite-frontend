@@ -1,4 +1,4 @@
-.aoi-title{
+.list-title{
     font-size: 1.3vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -10,52 +10,7 @@
     z-index:1;
 }
 
-.txt-sup{
-    font-size: 1.3vw;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    position: fixed;
-    color: #FFFFFF;
-    top: 60.5%;
-    left: 3%;
-    z-index:1;
-}
-
-.txt-inf{
-    font-size: 1.3vw;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    position: fixed;
-    color: #FFFFFF;
-    top: 70.5%;
-    left: 4.4%;
-    z-index:1;
-}
-
-.xy-button{
-    width: 6vw;
-    height: 4vh;
-    color: #99738e;
-    font-size: 1vw;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    margin-left:0.5vw;
-    border: 2px solid #99738e;
-    border-radius: 30px;
-}
-
-.xy-button-active{
-    width: 6vw;
-    height: 4vh;
-    font-size: 1vw;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    margin-left:0.5vw;
-    border: 2px solid #99738e;
-    border-radius: 30px;
-}
-
-.aoi-box{
+.img-form{
     display: block;
     border-radius: 30px;
     border: 3px solid #f64c72ff;
@@ -129,6 +84,42 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 1vw;
+}
+
+th{
+    border: 2px solid #FFFFFF;
+    background-color: #f64c72ff;
+    display: block;
+    position: relative;
+    left: 1.4vw;
+    top: 3vh;
+    width: 22vw;
+    padding: 1vh;
+    color: #FFFFFF;
+    font-size: 1.3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    z-index:2;
+}
+
+td{
+    border: 2px solid #f64c72ff;
+    position: relative;
+    left: 1.4vw;
+    top: 3vh;
+    width: 22vw;
+    padding: 1vh;
+    color: #f64c72ff;
+    font-size: 1.3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    z-index:1;
+}
+
+td:hover{
+    border: 2px solid #f64c72ff;
+    color: #f64c72ff;
+    background-color: #FFFFFF;
 }
 
 .invisible{

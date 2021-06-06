@@ -3,6 +3,7 @@ import './sidebar.css'
 import Infobox from "./sidebar_items/infobox";
 import logo from "../images/header.png";
 import AOI from "./sidebar_items/aoi";
+import Imagelist from "./sidebar_items/imagelist";
 
 class Sidebar extends React.Component {
     render() {
@@ -12,6 +13,7 @@ class Sidebar extends React.Component {
                 <Infobox/>
                 <AOI bounds={this.props.coords} cleanAll={this.props.cleanAll}
                      selectImage={this.props.selectImage}/>
+                <Imagelist cleanAll={this.props.cleanAll}/>
             </div>
         )
     }

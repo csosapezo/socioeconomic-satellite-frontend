@@ -12,6 +12,13 @@ class AOI extends React.Component {
     }
 
     selectArea = () => {
+        if (document.getElementById("top").className === "xy-button-active"){
+            this.props.cleanAll();
+            let aoi = document.getElementById("aoi");
+            let imagelist = document.getElementById("imagelist");
+            aoi.classList.add("invisible");
+            imagelist.classList.remove("invisible");
+        }
 
         return null;
     }
@@ -19,7 +26,7 @@ class AOI extends React.Component {
     render() {
 
         return (
-            <div class="aoi">
+            <div class="aoi" id="aoi">
                 <div className="aoi-title">
                     <FontAwesomeIcon icon={faMapMarkerAlt} />
                     Área de Interés (AOI)

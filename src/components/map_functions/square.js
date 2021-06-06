@@ -11,6 +11,12 @@ function GetSquare(props){
     const map = useMapEvents({
         click: (e) => {
 
+            let aoi = document.getElementById("aoi");
+
+            if (aoi.classList.contains("invisible")) {
+                return;
+            }
+
             map.eachLayer(function (layer) {
                 if (layer._url !== "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png") {
                     map.removeLayer(layer);
