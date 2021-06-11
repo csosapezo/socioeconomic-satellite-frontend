@@ -7,6 +7,11 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 class Imagelist extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {images: [{id: "Image 1"}, {id: "Image 2"}, {id: "Image 3"}, {id: "Image 4"}, {id: "Image 5"}, {id: "Image 6"}]}
+    }
+
     selectImage = () => {
         let aoi = document.getElementById("aoi")
         let imagelist = document.getElementById("imagelist")
@@ -24,6 +29,18 @@ class Imagelist extends React.Component {
         return null;
     }
 
+    renderTableData = () => {
+        return this.state.images.map((entry, index) => {
+            const {id} = entry //destructuring
+            console.log(index)
+            return (
+                <tr key={index}>
+                    <td>{id}</td>
+                </tr>
+            )
+        })
+    }
+
     render() {
         return (
             <div class="imagelist invisible" id="imagelist">
@@ -38,15 +55,11 @@ class Imagelist extends React.Component {
                             <th className="header name" >Nombre de archivo</th>
                         </tr>
                         </thead>
-                        <tbody className='t_Body'>
                         <Scrollbars style={{ width: 500, height: 200 }}>
-                            <tr><td>Imagen 1</td></tr>
-                            <tr><td>Imagen 2</td></tr>
-                            <tr><td>Imagen 3</td></tr>
-                            <tr><td>Imagen 4</td></tr>
-                            <tr><td>Imagen 5</td></tr>
-                        </Scrollbars>
+                        <tbody className='t_Body'>
+                            {this.renderTableData()}
                         </tbody>
+                        </Scrollbars>
                     </table>
                 </div>
                 <button className="btn1" onClick={this.selectImage}>Seleccionar</button>
