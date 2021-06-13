@@ -5,14 +5,32 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faImage} from "@fortawesome/free-solid-svg-icons";
 import { Scrollbars } from 'react-custom-scrollbars';
 
-class Imagelist extends React.Component {
+class ImageRow extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {images: [{id: "Image 1"}, {id: "Image 2"}, {id: "Image 3"}, {id: "Image 4"}, {id: "Image 5"}, {id: "Image 6"}]}
+    hoverImageEnter = () => {
+        console.log(this.props.idx)
+
+        let prevSelected = document.getElementsByClassName("selected")[0]
+
+        if (typeof prevSelected !== 'undefined') {
+            prevSelected.classList.remove("selected")
+        }
+
+        let thisRow = document.getElementById(this.props.idx)
+        thisRow.classList.add("selected")
+
+        this.props.hoverImageEnter(this.props.idx)
     }
 
+    render() {
+       return(<td id={this.props.idx} onClick={this.hoverImageEnter}>{this.props.data.name}</td>)
+    }
+}
+
+class Imagelist extends React.Component {
+
     selectImage = () => {
+        this.props.cleanAll()
         let aoi = document.getElementById("aoi")
         let imagelist = document.getElementById("imagelist")
         aoi.classList.remove("invisible")
@@ -30,12 +48,11 @@ class Imagelist extends React.Component {
     }
 
     renderTableData = () => {
-        return this.state.images.map((entry, index) => {
-            const {id} = entry //destructuring
-            console.log(index)
+
+        return this.props.images.map((entry, index) => {
             return (
                 <tr key={index}>
-                    <td>{id}</td>
+                    <ImageRow data={entry} idx={index} hoverImageEnter={this.props.hoverEnter}/>
                 </tr>
             )
         })
@@ -56,7 +73,7 @@ class Imagelist extends React.Component {
                         </tr>
                         </thead>
                         <Scrollbars style={{ width: 500, height: 200 }}>
-                        <tbody className='t_Body'>
+                        <tbody id="tbody" className='t_Body'>
                             {this.renderTableData()}
                         </tbody>
                         </Scrollbars>

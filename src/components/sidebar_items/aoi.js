@@ -12,6 +12,9 @@ class AOI extends React.Component {
     }
 
     selectArea = () => {
+
+        this.props.selectImage()
+
         if (document.getElementById("top").className === "xy-button-active"){
             this.props.cleanAll();
             let aoi = document.getElementById("aoi");

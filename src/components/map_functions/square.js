@@ -3,7 +3,7 @@ import L from 'leaflet'
 import {useEffect} from "react";
 
 function getBounds(center) {
-    return L.latLng(center).toBounds(10000)
+    return L.latLng(center).toBounds(3000)
 }
 
 function GetSquare(props){
@@ -38,6 +38,26 @@ function GetSquare(props){
                     map.removeLayer(layer);
                 }
             });
+        }
+
+        if (props.selectedIdx !== -1) {
+
+            console.log("Entra")
+
+            map.eachLayer(function (layer) {
+                if (layer._url !== "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png") {
+                    map.removeLayer(layer);
+                }
+            });
+
+            let bounds = props.images[props.selectedIdx].bounding_box
+            console.log(bounds)
+            const coords = [[bounds.bottom, bounds.left], [bounds.top, bounds.right]];
+
+            console.log(coords)
+
+            let rect = new L.Rectangle(coords, {color: "#f64c72ff"});
+            rect.addTo(map);
         }
     })
 

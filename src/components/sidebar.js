@@ -12,8 +12,8 @@ class Sidebar extends React.Component {
                 <img src={logo} alt="Visualización de imágenes" />
                 <Infobox/>
                 <AOI bounds={this.props.coords} cleanAll={this.props.cleanAll}
-                     selectImage={this.props.selectImage}/>
-                <Imagelist cleanAll={this.props.cleanAll}/>
+                     selectImage={this.props.selectArea}/>
+                <Imagelist cleanAll={this.props.cleanAll} images={this.props.images} hoverEnter={this.props.hoverEnter}/>
             </div>
         )
     }

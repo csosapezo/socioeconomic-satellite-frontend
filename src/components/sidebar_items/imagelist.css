@@ -110,7 +110,7 @@ td{
     width: 22vw;
     padding: 1vh;
     color: #f64c72ff;
-    font-size: 1.3vw;
+    font-size: 0.6vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     z-index:1;
@@ -120,6 +120,11 @@ td:hover{
     border: 2px solid #f64c72ff;
     color: #f64c72ff;
     background-color: #FFFFFF;
+}
+
+.selected {
+    color: #FFFFFF;
+    background-color: #f64c72ff;
 }
 
 .invisible{
