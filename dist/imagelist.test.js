@@ -25,7 +25,7 @@ afterEach(function () {
   container.remove();
   container = null;
 });
-it('renders AOI text', function () {
+it('renders Imagelist', function () {
   var images = [{
     "name": "foo"
   }, {
