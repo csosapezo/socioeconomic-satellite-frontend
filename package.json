@@ -13,7 +13,10 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "enzyme-adapter-react-16": "^1.15.6",
     "fontsource-montserrat": "^4.0.0",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
     "react-custom-scrollbars": "^4.2.1",
@@ -25,9 +28,34 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "@fontsource/montserrat": "<rootDir>/cssStub.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/fileMock.js"
+    }
+  },
+  "testPathIgnorePatterns": [
+    "/node_modules/"
+  ],
+  "collectCoverage": true,
+  "verbose": true,
+  "modulePathIgnorePatterns": [
+    "rpmbuild"
+  ],
+  "unmockedModulePathPatterns": [
+    "<rootDir>/node_modules/react/",
+    "<rootDir>/node_modules/react-dom/",
+    "<rootDir>/node_modules/react-addons-test-utils/",
+    "<rootDir>/node_modules/fbjs",
+    "<rootDir>/node_modules/core-js"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -40,6 +68,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
+    "enzyme": "^3.11.0",
+    "jest": "^26.6.0",
     "react-perfect-scrollbar": "^1.5.8"
   }
 }

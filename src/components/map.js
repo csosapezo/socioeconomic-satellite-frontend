@@ -1,7 +1,6 @@
 import React from 'react'
 import './map.css'
 import 'leaflet/dist/leaflet.css';
-import ImageLayers from "./map_functions/image_layers";
 import {MapContainer, TileLayer, LayersControl, ImageOverlay} from 'react-leaflet'
 import GetSquare from "./map_functions/square";
 
@@ -39,7 +38,6 @@ function Map(props) {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <ImageLayers/>
                 <GetSquare handleFunc={props.squareCoords} clean={props.cleanRectangle}
                            selectedIdx={props.selectedIdx}
                            images={props.images}/>
