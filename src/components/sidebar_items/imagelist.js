@@ -8,7 +8,6 @@ import { Scrollbars } from 'react-custom-scrollbars';
 class ImageRow extends React.Component {
 
     hoverImageEnter = () => {
-        console.log(this.props.idx)
 
         let prevSelected = document.getElementsByClassName("selected")[0]
 

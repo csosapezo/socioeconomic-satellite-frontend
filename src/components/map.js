@@ -17,7 +17,6 @@ function renderMasks(maskPaths, bounds) {
             opacity = 1
         }
 
-        console.log(opacity)
 
         return (
             <LayersControl.Overlay checked name={desc}>

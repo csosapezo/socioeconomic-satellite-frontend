@@ -32,7 +32,6 @@ class App extends React.Component {
   }
 
   squareCoords = (coords) => {
-      console.log(coords)
 
       let newState = {
           "north": coords._northEast.lat,
@@ -42,7 +41,6 @@ class App extends React.Component {
       };
 
       this.setState(() => {return ({sidebar_coords: newState, clean: false})});
-      console.log(this.state.sidebar_coords)
 
       document.getElementById("top").className = "xy-button-active"
       document.getElementById("right").className = "xy-button-active"
@@ -79,7 +77,6 @@ class App extends React.Component {
 
   prediction = (path) => {
       doPredict(path).then((res) => {
-          console.log(res.data)
 
           let image_data = res.data.image
           let bbDict = image_data.bounding_box
@@ -94,7 +91,6 @@ class App extends React.Component {
       document.getElementById("aoi").classList.remove("blocked")
 
       doCheckFiles(path).then((res) => {
-          console.log(res.data)
 
           let image_data;
 
@@ -119,7 +115,6 @@ class App extends React.Component {
       const right = document.getElementById("right").value
 
       doSearchImages(top, bottom, left, right).then((res) => {
-          console.log(res.data)
           this.setState({images: res.data.images})
       } )
 

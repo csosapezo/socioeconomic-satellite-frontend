@@ -31,7 +31,6 @@ function GetSquare(props){
     })
 
     useEffect(() => {
-        console.log(props.clean)
         if (props.clean) {
             map.eachLayer(function (layer) {
                 if (layer._url !== "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png") {
@@ -42,7 +41,6 @@ function GetSquare(props){
 
         if (props.selectedIdx !== -1) {
 
-            console.log("Entra")
 
             map.eachLayer(function (layer) {
                 if (layer._url !== "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png") {
@@ -51,10 +49,8 @@ function GetSquare(props){
             });
 
             let bounds = props.images[props.selectedIdx].bounding_box
-            console.log(bounds)
             const coords = [[bounds.bottom, bounds.left], [bounds.top, bounds.right]];
 
-            console.log(coords)
 
             let rect = new L.Rectangle(coords, {color: "#f64c72ff"});
             rect.addTo(map);
