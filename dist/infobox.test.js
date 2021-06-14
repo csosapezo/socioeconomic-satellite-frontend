@@ -25,7 +25,7 @@ afterEach(function () {
   container.remove();
   container = null;
 });
-it('renders AOI text', function () {
+it('renders infobox text', function () {
   (0, _testUtils.act)(function () {
     (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(_infobox.default, null), container);
   });

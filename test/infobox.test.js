@@ -19,7 +19,7 @@ afterEach(() => {
     container = null;
 });
 
-it('renders AOI text', () => {
+it('renders infobox text', () => {
     act(() => {
 
 
