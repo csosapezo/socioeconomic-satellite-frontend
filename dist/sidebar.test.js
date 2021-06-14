@@ -39,5 +39,8 @@ it('renders sidebar items', function () {
     }), container);
   });
   expect(document.querySelector("img").alt).toBe("Visualización de imágenes");
+  expect(document.getElementById("aoi")).not.toBe(null);
+  expect(document.getElementById("imagelist")).not.toBe(null);
+  expect(document.getElementsByClassName("info")[0]).not.toBe(null);
 });
 //# sourceMappingURL=sidebar.test.js.map

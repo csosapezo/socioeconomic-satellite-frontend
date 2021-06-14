@@ -32,5 +32,8 @@ it('renders sidebar items', () => {
 
     });
     expect(document.querySelector("img").alt).toBe("Visualización de imágenes");
+    expect(document.getElementById("aoi")).not.toBe(null);
+    expect(document.getElementById("imagelist")).not.toBe(null);
+    expect(document.getElementsByClassName("info")[0]).not.toBe(null);
 
 });
