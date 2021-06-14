@@ -30,6 +30,7 @@ class ImageRow extends React.Component {
 class Imagelist extends React.Component {
 
     selectImage = () => {
+        this.props.selectImage()
         this.props.cleanAll()
         let aoi = document.getElementById("aoi")
         let imagelist = document.getElementById("imagelist")

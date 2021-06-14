@@ -13,7 +13,7 @@ function GetSquare(props){
 
             let aoi = document.getElementById("aoi");
 
-            if (aoi.classList.contains("invisible")) {
+            if (aoi.classList.contains("invisible") || aoi.classList.contains("blocked")) {
                 return;
             }
 
