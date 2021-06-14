@@ -15,6 +15,7 @@ function renderMasks(maskPaths, bounds) {
 
         if (index === 0) {
             opacity = 1
+            desc = entry.level
         }
 
 
